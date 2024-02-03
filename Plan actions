@@ -1,5 +1,22 @@
 Personality test :
-    look into APIs
-    research Chaching/save point
+    Look into APIs
+    Research Chaching/save point
+
 Home page :
+    Start Conversation:
+        Upon being clicked, starters are displayed, and questions are asked about what type of conversation and goal.
+    Previous Conversations:
+        User can look at past conversations to gain knowledge, and rate them, which helps improve the app.
+    Continue Paused Conversations:
+        User can continue previously paused online conversations, and learn how to kick start it again. Notifications can be sent
+
+Mission/About Us Page:
+    Talk about our goal with this app.
+
+App Manual:
+    How to use app.
+
+
+
+
     
