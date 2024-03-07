@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="30dp"
+    >
+
+    <TextView
+        android:id="@+id/nav_about"
+        android:layout_width="397dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+
+        android:layout_height="150dp"
+        android:layout_marginTop="670dp"
+        android:background="@drawable/bg_view2" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="265dp"
+        android:layout_height="59dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginBottom="600dp"
+        android:foregroundGravity="center"
+        app:srcCompat="@drawable/fsbsb_modified" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Chat"
+        android:layout_marginLeft="123dp"
+        android:layout_marginTop="75dp"
+        android:fontFamily="sans-serif-black"
+        android:textSize="40dp"/>
+
+    <!-- Edited code below -->
+    <TextView
+        android:id="@+id/question1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tone of conversation:"
+        android:layout_below="@id/textView"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/answer1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="e.g. formal, casual, etc."
+        android:layout_below="@id/question1"
+        android:layout_alignLeft="@id/question1"
+        android:inputType="text"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/question2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recipient:"
+        android:layout_below="@id/answer1"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/answer2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="e.g. position"
+        android:layout_below="@id/question2"
+        android:layout_alignLeft="@id/question2"
+        android:inputType="text"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/question3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Setting:"
+        android:layout_below="@id/answer2"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/answer3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="e.g. job"
+        android:layout_below="@id/question3"
+        android:layout_alignLeft="@id/question3"
+        android:inputType="text"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/question4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What you want to communicate:"
+        android:layout_below="@id/answer3"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/answer4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="e.g. greeting, etc."
+        android:layout_below="@id/question4"
+        android:layout_alignLeft="@id/question4"
+        android:inputType="text"
+        android:textSize="30sp"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/ans_B"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="675dp"
+        android:layout_marginEnd="5dp"
+
+        android:backgroundTint="#FFFFFF"
+        android:text="Generate Message!"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/response"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Response Here"
+        android:layout_marginLeft="123dp"
+        android:layout_marginTop="730dp"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20dp"/><!-- Added gap at the bottom -->
+</RelativeLayout>
