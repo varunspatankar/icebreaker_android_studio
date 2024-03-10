@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Lesson1Activity">
+
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <!-- Video Title -->
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How to prepare for an interview as an informal person"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+        <!-- Container for lesson boxes -->
+        <LinearLayout
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/textView"
+            android:layout_marginTop="20dp">
+
+            <!-- Sample Lesson Box -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardStrokeColor="@color/teal_200"
+                app:cardStrokeWidth="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Emphasis
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="How to prepare for an interview as an informal person:"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+-->
+                    <!-- Text -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="When you prepare for an interview, think about what the job entails and why you are applying. What experiences and skills will help you carry out these roles. An important aspect of an interview is making sure you differentiate yourself from other applicants. What aspects of the company appeal to you and how do you fit well in the company environment? Once this is researched, remember to tailor responses to fit within the context of the company. Once you have properly prepared and researched the context of the interview, think about specific questions that an interviewer might ask for. Also remember that interviewers will usually ask questions in relation to your specific job. Once all of this has been considered, think about how you appear and answer the questions. Dress in full business attire and lean forward slightly to show interest and engagement but avoid slouching or hunching. Keep an even tone throughout your responses, but don’t be monotone. Show personality, but do not show extensive emotion. Make sure you do not use slang and you maintain a formal tone. Despite this, don’t needlessly use overcomplicated words."
+                        android:textSize="16sp"
+                        android:textColor="#666666"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

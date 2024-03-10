@@ -25,7 +25,7 @@
             android:textStyle="bold"
             android:layout_centerHorizontal="true"/>
 
-        <!-- Container for chat boxes -->
+        <!-- Container for lesson boxes -->
         <LinearLayout
             android:layout_width="500dp"
             android:layout_height="wrap_content"
@@ -33,8 +33,9 @@
             android:layout_below="@id/textView"
             android:layout_marginTop="20dp">
 
-            <!-- Sample Chat Box -->
+            <!-- Sample Lesson Box -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/l1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -50,27 +51,28 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!-- Chat Title -->
+                    <!-- Lesson Title -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Conversation with John"
+                        android:text="How to prepare for an interview as an informal person"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="8dp"/>
 
-                    <!-- Chat Date -->
+                    <!-- Open text -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Date: March 6, 2024"
+                        android:text="Open"
                         android:textSize="16sp"
                         android:textColor="#666666"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Sample Chat Box -->
+            <!-- Sample Lesson Box -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/l2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -86,26 +88,63 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!-- Chat Title -->
+                    <!-- Lesson Title -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Meeting Notes"
+                        android:text="Common Interview Questions"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="8dp"/>
 
-                    <!-- Chat Date -->
+                    <!-- Open text -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Date: March 5, 2024"
+                        android:text="Open"
                         android:textSize="16sp"
                         android:textColor="#666666"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Add more chat boxes as needed -->
+            <!-- Sample Lesson Box -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/l3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardStrokeColor="@color/purple_700"
+                app:cardStrokeWidth="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Lesson Title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="How to motivate your co-workers as an overly formal person"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <!-- Open text -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Open"
+                        android:textSize="16sp"
+                        android:textColor="#666666"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Add more lesson boxes as needed -->
         </LinearLayout>
     </RelativeLayout>
 
