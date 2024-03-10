@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_newchat"
+            android:icon="@drawable/ic_new"
+            android:title="New Chat" />
+        <item
+            android:id="@+id/nav_oldchat"
+            android:icon="@drawable/ic_past"
+            android:title="Old Chats" />
+        <item
+            android:id="@+id/nav_lessons"
+            android:icon="@drawable/ic_lesson"
+            android:title="Lessons" />
+
+        <item
+            android:id="@+id/nav_howtouse"
+            android:icon="@drawable/ic_use"
+            android:title="How to Use" />
+
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_about"
+            android:title="About" />
+    </group>
+</menu>
