@@ -27,4 +27,9 @@
         <attr name="cardStrokeColor" format="color" />
         <attr name="cardStrokeWidth" format="dimension" />
     </declare-styleable>
+  <!-- Base application theme. -->
+    <style name="Base.Theme.TSASoftDev24" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
 </resources>
