@@ -142,7 +142,7 @@
             android:textSize="30sp"
             android:layout_marginBottom="20dp"/>
 
-        <Button
+<!--        <Button
             android:id="@+id/ans_B"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -152,7 +152,46 @@
 
             android:backgroundTint="#FFFFFF"
             android:text="Generate Message!"
-            android:textColor="@color/black" />
+            android:textColor="@color/black" /> -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ans"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="690dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#000000"
+            android:backgroundTint="#FFFFFF"
+            app:cardStrokeColor="@color/purple_700"
+            app:cardStrokeWidth="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Generate message!"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Open"
+                    android:textSize="16sp"
+                    android:textColor="#666666"/> -->
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/response"
