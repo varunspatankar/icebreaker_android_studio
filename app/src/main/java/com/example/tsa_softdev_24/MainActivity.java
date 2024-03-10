@@ -2,6 +2,7 @@ package com.example.tsa_softdev_24;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -23,10 +24,11 @@ public class MainActivity extends AppCompatActivity {
 public class MainActivity extends AppCompatActivity {
     public CardView card1, card2, card3, card4, card5, card6;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.welcome);
 
         // Find the CardView by its ID
         card1 = (CardView) findViewById(R.id.h1);

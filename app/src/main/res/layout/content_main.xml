@@ -182,7 +182,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Reset"
+                    android:text="Personality Test"
                     android:layout_gravity="center_horizontal"
                     android:textStyle="bold"
                     android:textSize="18sp"
