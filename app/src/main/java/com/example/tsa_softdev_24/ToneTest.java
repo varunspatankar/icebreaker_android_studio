@@ -1,6 +1,7 @@
 package com.example.tsa_softdev_24;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ToneTest extends AppCompatActivity implements View.OnClickListener{
+    public class ToneTest extends AppCompatActivity implements View.OnClickListener{
 
     TextView totalQuestionsTextView;
     TextView questionTextView;
@@ -20,6 +21,7 @@ public class ToneTest extends AppCompatActivity implements View.OnClickListener{
     int totalQuestion = QuestionAnswer.question.length;
     int currentQuestionIndex = 0;
     String selectedAnswer = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,9 +61,7 @@ public class ToneTest extends AppCompatActivity implements View.OnClickListener{
 
         Button clickedButton = (Button) view;
         if(clickedButton.getId()==R.id.submit_btn){
-            if(selectedAnswer.equals(QuestionAnswer.correctAnswers[currentQuestionIndex])){
-                score++;
-            }
+            score += 1;
             currentQuestionIndex++;
             loadNewQuestion();
 
@@ -71,23 +71,24 @@ public class ToneTest extends AppCompatActivity implements View.OnClickListener{
             selectedAnswer  = clickedButton.getText().toString();
             clickedButton.setBackgroundColor(Color.LTGRAY);
 
+
         }
 
     }
 
-    void loadNewQuestion(){
+    void loadNewQuestion() {
 
-        if(currentQuestionIndex == totalQuestion ){
+        if (currentQuestionIndex == totalQuestion) {
             finishQuiz();
             return;
+        } else {
+            questionTextView.setText(QuestionAnswer.question[currentQuestionIndex]);
+            ansA.setText(QuestionAnswer.choices[currentQuestionIndex][0]);
+            ansB.setText(QuestionAnswer.choices[currentQuestionIndex][1]);
+            ansC.setText(QuestionAnswer.choices[currentQuestionIndex][2]);
+            ansD.setText(QuestionAnswer.choices[currentQuestionIndex][3]);
+
         }
-
-        questionTextView.setText(QuestionAnswer.question[currentQuestionIndex]);
-        ansA.setText(QuestionAnswer.choices[currentQuestionIndex][0]);
-        ansB.setText(QuestionAnswer.choices[currentQuestionIndex][1]);
-        ansC.setText(QuestionAnswer.choices[currentQuestionIndex][2]);
-        ansD.setText(QuestionAnswer.choices[currentQuestionIndex][3]);
-
     }
 
     void finishQuiz(){
@@ -108,6 +109,8 @@ public class ToneTest extends AppCompatActivity implements View.OnClickListener{
         score = 0;
         currentQuestionIndex =0;
         loadNewQuestion();
+        Intent intent = new Intent(ToneTest.this, MainActivity.class);
+        startActivity(intent);
     }
 
 }
