@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Lesson1Activity">
+    tools:context=".ToneTestAbout">
 
     <RelativeLayout android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="How to prepare for an interview as an informal person"
+            android:text="About The Tone Test"
             android:layout_marginTop="16dp"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -61,7 +61,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="When you prepare for an interview, think about what the job entails and why you are applying. What experiences and skills will help you carry out these roles. An important aspect of an interview is making sure you differentiate yourself from other applicants. What aspects of the company appeal to you and how do you fit well in the company environment? Once this is researched, remember to tailor responses to fit within the context of the company. Once you have properly prepared and researched the context of the interview, think about specific questions that an interviewer might ask for. Also remember that interviewers will usually ask questions in relation to your specific job. Lean forward slightly to show interest and engagement but avoid slouching or hunching. Keep an even tone throughout your responses, but don’t be monotone. Show personality, but do not show extensive emotion. Make sure you do not use slang and you maintain a formal tone. Despite this, don’t needlessly use overcomplicated words."
+                        android:text="They then are navigated to a tone test, which tells us more about a person and their ambitions when speaking.
+                        \n
+                        \nUpon answering the last question of the tone test, a popup occurs, indicating finish, and gives the user the option to “Start Breaking Ice” and navigate to the main page in the conversational app."
                         android:textSize="16sp"
                         android:textColor="#666666"/>
                 </LinearLayout>
