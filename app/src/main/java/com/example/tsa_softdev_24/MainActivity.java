@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.welcome);
+        setContentView(R.layout.activity_main);
 
         // Find the CardView by its ID
         card1 = (CardView) findViewById(R.id.h1);
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Start the new activity
-                Intent intent = new Intent(MainActivity.this, ResetActivity.class);
+                Intent intent = new Intent(MainActivity.this, ToneTest.class);
                 startActivity(intent);
             }
         });
