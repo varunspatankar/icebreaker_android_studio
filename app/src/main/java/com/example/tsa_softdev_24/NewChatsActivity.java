@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,11 +17,18 @@ import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.util.HashMap;
 
 import javax.net.ssl.HttpsURLConnection;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+
 
 public class NewChatsActivity extends AppCompatActivity {
     public CardView answer;
@@ -58,6 +66,20 @@ public class NewChatsActivity extends AppCompatActivity {
                 String current_setting = t3.getText().toString();
                 String current_question = t4.getText().toString();
 
+                HashMap<String, String> request = new HashMap<>();
+                request.put("tone", current_tone);
+                request.put("recipient", current_recipient);
+                request.put("message", current_question);
+                request.put("setting", current_setting);
+
+                String tosend;
+                ObjectMapper request2 = new ObjectMapper();
+                try {
+                    tosend = request2.writeValueAsString(request);
+                } catch (JsonProcessingException e) {
+                    throw new RuntimeException(e);
+                }
+
                 ChatData current = new ChatData(current_tone, current_recipient, current_setting, current_question);
                 URL url = null;
                 try {
@@ -81,7 +103,7 @@ public class NewChatsActivity extends AppCompatActivity {
                 conn.setRequestProperty("User-Agent", "Mozilla/5.0");
 
                 try (DataOutputStream dos = new DataOutputStream(conn.getOutputStream())) {
-                    dos.writeBytes(current.toJSON());
+                    dos.writeBytes(tosend);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -100,7 +122,6 @@ public class NewChatsActivity extends AppCompatActivity {
                 //startActivity(intent);
             }
         });
-
 
     }
 }
