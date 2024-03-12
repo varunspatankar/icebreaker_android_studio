@@ -2,6 +2,7 @@ package com.example.tsa_softdev_24;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -18,10 +19,13 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Serializable;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.util.HashMap;
+
+import java.io.IOException;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -87,9 +91,13 @@ public class NewChatsActivity extends AppCompatActivity {
                 } catch (MalformedURLException e) {
                     throw new RuntimeException(e);
                 }
-                HttpsURLConnection conn = null;
+
+
+
+
+                HttpURLConnection conn = null;
                 try {
-                    conn = (HttpsURLConnection) url.openConnection();
+                    conn = (HttpURLConnection) url.openConnection();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -99,23 +107,41 @@ public class NewChatsActivity extends AppCompatActivity {
                     throw new RuntimeException(e);
                 }
                 conn.setDoOutput(true);
+                conn.setDoInput(true);
                 conn.setRequestProperty("Content-Type", "application/json");
                 conn.setRequestProperty("User-Agent", "Mozilla/5.0");
 
-                try (DataOutputStream dos = new DataOutputStream(conn.getOutputStream())) {
-                    dos.writeBytes(tosend);
+                try {
+                    DataOutputStream out = new DataOutputStream(conn.getOutputStream());
+                    out.writeBytes(tosend);
+                    out.flush();
+                    out.close();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
+
+                //out.writeBytes(tosend);
+
+                /*
+                try (DataOutputStream out = new DataOutputStream(conn.getOutputStream())) {
+                    out.writeBytes(tosend);
+                    out.flush();
+                    out.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                 */
 
                 try (BufferedReader bf = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
                     String line;
                     while ((line = bf.readLine()) != null) {
-                        System.out.println(line);
+                        Log.i("debug: ", line);
                     }
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
+
+
 
                 // Start the new activity
                 //Intent intent = new Intent(NewChatsActivity.this, OldChats2Activity.class);
