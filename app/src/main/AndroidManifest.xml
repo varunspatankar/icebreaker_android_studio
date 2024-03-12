@@ -73,7 +73,7 @@
             android:name=".NewChatsActivity"
             android:exported="false" />
         <activity
-            android:name=".welcome"
+            android:name=".Welcome"
             android:exported="true" />
         <activity
             android:name=".ToneTest"
