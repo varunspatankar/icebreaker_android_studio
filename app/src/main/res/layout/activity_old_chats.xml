@@ -35,6 +35,7 @@
 
             <!-- Sample Chat Box -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/old1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -54,23 +55,24 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Conversation with John"
+                        android:text="Chat 1"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="8dp"/>
 
-                    <!-- Chat Date -->
+                    <!-- Chat Date
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Date: March 6, 2024"
                         android:textSize="16sp"
-                        android:textColor="#666666"/>
+                        android:textColor="#666666"/> -->
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <!-- Sample Chat Box -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/old2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -90,18 +92,55 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Meeting Notes"
+                        android:text="Chat 2"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="8dp"/>
 
-                    <!-- Chat Date -->
+                    <!-- Chat Date
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Date: March 5, 2024"
                         android:textSize="16sp"
-                        android:textColor="#666666"/>
+                        android:textColor="#666666"/> -->
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Sample Chat Box -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/old3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardStrokeColor="@color/purple_700"
+                app:cardStrokeWidth="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Chat Title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chat 3"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <!-- Chat Date
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date: March 5, 2024"
+                        android:textSize="16sp"
+                        android:textColor="#666666"/> -->
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
