@@ -6,8 +6,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ToneTest extends AppCompatActivity implements View.OnClickListener {
@@ -18,7 +20,7 @@ public class ToneTest extends AppCompatActivity implements View.OnClickListener 
     TextView questionTextView;
     Button ansA, ansB, ansC, ansD;
     Button submitBtn;
-    String toneLabel;
+    public static String toneLabel;
     int score = 0;
     int totalQuestion = 5;
     public int currentQuestionIndex = 0;
@@ -30,8 +32,16 @@ public class ToneTest extends AppCompatActivity implements View.OnClickListener 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tone_test);
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                Intent intent = new Intent(ToneTest.this, MainActivity.class);
+                startActivity(intent);
+            }
+        };
 
         totalQuestionsTextView = findViewById(R.id.total_question);
         questionTextView = findViewById(R.id.question);
@@ -245,6 +255,8 @@ public class ToneTest extends AppCompatActivity implements View.OnClickListener 
         score = 0;
         currentQuestionIndex =0;
         loadNewQuestion();
+
+
         Intent intent = new Intent(ToneTest.this, MainActivity.class);
         startActivity(intent);
     }

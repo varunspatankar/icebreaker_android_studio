@@ -33,6 +33,15 @@ public class NewChatsActivity extends AppCompatActivity {
 //        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_new_chats);
 
+        EditText t1, t2, t3, t4;
+
+        t1 = findViewById(R.id.answer1);
+        t2 = findViewById(R.id.answer2);
+        t3 = findViewById(R.id.answer3);
+        t4 = findViewById(R.id.answer4);
+
+        t1.setText(ToneTest.toneLabel);
+
         /*
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -50,17 +59,13 @@ public class NewChatsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                String body = "{\"name\": \"Apple iPad Air\", \"data\": { \"Generation\": \"4th\", \"Price\": \"519.99\", \"Capacity\": \"256 GB\" }}";
-                EditText t1, t2, t3, t4;
-
-                t1 = findViewById(R.id.answer1);
-                t2 = findViewById(R.id.answer2);
-                t3 = findViewById(R.id.answer3);
-                t4 = findViewById(R.id.answer4);
 
                 String current_tone = t1.getText().toString();
                 String current_recipient = t2.getText().toString();
                 String current_setting = t3.getText().toString();
                 String current_question = t4.getText().toString();
+
+                currentChatData = new ChatData(current_tone, current_recipient, current_setting, current_question);
 
                 final FormBody formBody = new FormBody.Builder()
                         .add("tone", current_tone)
@@ -97,16 +102,17 @@ public class NewChatsActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
+                String result;
                 try {
-                    AlertDialog show = new AlertDialog.Builder(v.getContext())
-                            .setTitle(response.body().string())
-                            .setCancelable(false)
-                            .show();
-                   ;
-
+                    result = response.body().string();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
+                AlertDialog show = new AlertDialog.Builder(v.getContext())
+                        .setTitle(result)
+                        .setCancelable(false)
+                        .show();
+                currentChat = new Chat(result.substring(11, result.length() - 2), currentChatData);
 
 
                 Intent intent = new Intent(NewChatsActivity.this, OldChatsTemplateActivity.class);

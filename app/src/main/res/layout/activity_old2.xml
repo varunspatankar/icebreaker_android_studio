@@ -45,6 +45,7 @@
                 app:cardStrokeWidth="2dp">
 
                 <TextView
+                    android:id="@+id/old2_prompt1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tone:
@@ -68,6 +69,7 @@
                 app:cardStrokeWidth="2dp">
 
                 <TextView
+                    android:id="@+id/old2_prompt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="User: "
@@ -87,6 +89,7 @@
                 app:cardStrokeWidth="2dp">
 
                 <TextView
+                    android:id="@+id/old2_prompt3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Assistant: "
