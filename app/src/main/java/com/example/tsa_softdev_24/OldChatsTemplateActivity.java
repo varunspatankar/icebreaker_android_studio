@@ -22,7 +22,7 @@ import javax.net.ssl.HttpsURLConnection;
 public static void updateData(Chat c) {
 
         }
- */
+*/
 
 public class OldChatsTemplateActivity extends AppCompatActivity {
 
@@ -30,7 +30,7 @@ public class OldChatsTemplateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        EdgeToEdge.enable(this);
-        updateData(NewChatsActivity.currentChat);
+//        updateData(NewChatsActivity.currentChat);
         setContentView(R.layout.activity_old_chats_template);
 
         /*
