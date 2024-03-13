@@ -7,31 +7,26 @@
     android:layout_height="match_parent"
     tools:context=".Lesson3Activity">
 
-    <RelativeLayout android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <!-- Video Title -->
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="How to motivate your co-workers as an overly formal person"
-            android:layout_marginTop="16dp"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_centerHorizontal="true"/>
-
-        <!-- Container for lesson boxes -->
         <LinearLayout
-            android:layout_width="500dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_below="@id/textView"
-            android:layout_marginTop="20dp">
+            android:padding="16dp">
 
-            <!-- Sample Lesson Box -->
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="How to Motivate Your Co-workers as an Overly Formal Person"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"/>
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -48,26 +43,70 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!-- Emphasis
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="How to prepare for an interview as an informal person:"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="8dp"/>
--->
-                    <!-- Text -->
+                        android:layout_marginBottom="8dp"
+                        android:text="Understanding Your Co-Worker"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Try to think about who it is you are talking to. Establishing a personal connection is important to make sure they listen to what you are saying and will consider following your advice. Respect your co-workers’ privacy and do not investigate their personal matters that they do not wish to share. Revealing that you extensively researched sensitive information from their past will immediately sour your relationship and make it harder to help them. Once you get an idea of who they are, try to set up a one-on-one meeting with them. Try to keep this outside of the workplace and meet in a location that they will be comfortable in. After this, begin the conversation with something not related to work. Try to use the beginning of the conversation as a way to learn more about them. Ease the conversation into the topic of their productivity, or lack there-of, and try to encourage them to talk about what they have been struggling with. Make it clear that you’re open to helping them, and if you can mention another instance where you helped someone with a task at work. sure, to just act naturally and try to smile and show positivity. "
-                        android:textSize="16sp"
-                        android:textColor="#666666"/>
+                        android:autoSizeMaxTextSize="1sp"
+                        android:lineSpacingExtra="4dp"
+                        android:text="Try to think about who it is you are talking to. Establishing a personal connection is important to make sure they listen to what you are saying and consider following your advice. Respect your co-workers' privacy and avoid investigating their personal matters that they do not wish to share."
+                        android:textColor="#666666"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_marginTop="200dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Conversation"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:autoSizeMaxTextSize="1sp"
+                        android:lineSpacingExtra="4dp"
+                        android:text="Revealing that you extensively
+researched sensitive information from their
+past will immediately sour your relationship and
+make it harder to help them. Once you get an
+idea of who they are, try to set up a one-on-one
+meeting with them. Try to keep this outside
+of the workplace and meet in a location that
+they will be comfortable in. After this, begin the
+conversation with something not related to work.
+Try to use the beginning of the conversation
+as a way to learn more about them. Ease the
+conversation into the topic of their productivity,
+or lack there-of, and try to encourage them to
+talk about what they have been struggling with.
+Make it clear that you're open to helping them,
+and if you can mention another instance where
+you helped someone with a task at work. sure,
+to just act naturally and try to smile and show
+positivity."
+                        android:textColor="#666666"
+                        android:textSize="14sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
+            <!-- The rest of your content should go here -->
+
         </LinearLayout>
-
-    </RelativeLayout>
-
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
