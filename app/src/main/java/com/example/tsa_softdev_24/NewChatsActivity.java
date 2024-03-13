@@ -1,14 +1,15 @@
 package com.example.tsa_softdev_24;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -18,6 +19,9 @@ import okhttp3.Response;
 public class NewChatsActivity extends AppCompatActivity {
     public CardView answer;
     public String url = "http:/10.0.2.2:1800/";
+    private static volatile Response response;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,45 +58,61 @@ public class NewChatsActivity extends AppCompatActivity {
                 String current_setting = t3.getText().toString();
                 String current_question = t4.getText().toString();
 
+                final FormBody formBody = new FormBody.Builder()
+                        .add("tone", current_tone)
+                        .add("recipent", current_recipient)
+                        .add("message", current_question)
+                        .add("setting", current_setting)
+                        .build();
+                final Request builder = new Request.Builder()
+                        .header("Content-Type", "application/json")
+                        .header("User-Agent", "Mozilla/5.0")
+                        .url(url)
+                        .post(formBody)
+                        .build();
+                final OkHttpClient client = new OkHttpClient.Builder()
+                        .connectTimeout(15,TimeUnit.SECONDS)
+                        .readTimeout(15,TimeUnit.SECONDS)
+                        .writeTimeout(15,TimeUnit.SECONDS)
+                        .build();
 
                 Runnable runnable = new Runnable() {
-                    public void run() {
-                        OkHttpClient client = new OkHttpClient();
-
-                        FormBody formBody = new FormBody.Builder()
-                                .add("tone", current_tone)
-                                .add("recipent", current_recipient)
-                                .add("message", current_question)
-                                .add("setting", current_setting)
-                                .build();
-
-
-
-                        Request builder = new Request.Builder()
-                                .header("Content-Type", "application/json")
-                                .header("User-Agent", "Mozilla/5.0")
-                                .url(url)
-                                .post(formBody)
-                                .build();
-
+                    final public void run() {
                         try {
-                            Response response = client.newCall(builder).execute();
+                            response = client.newCall(builder).execute();
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
                     }
+
                 };
                 Thread thread = new Thread(runnable);
                 thread.start();
-                Intent intent = new Intent(NewChatsActivity.this, Old1.class);
-                startActivity(intent);
+                try {
+                    thread.join();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    AlertDialog show = new AlertDialog.Builder(v.getContext())
+                            .setTitle(response.body().string())
+                            .setCancelable(false)
+                            .show();
+                   ;
+
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            ;
+        });
 
 
 
-                };
-            });
-        }
+
     }
+}
 
 
 
