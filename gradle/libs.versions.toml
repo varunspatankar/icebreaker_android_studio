@@ -18,6 +18,7 @@ okhttpAndroid = "5.0.0-alpha.12"
 mockwebserver3Junit5 = "5.0.0-alpha.12"
 loggingInterceptor = "5.0.0-alpha.12"
 okhttpBom = "5.0.0-alpha.12"
+okhttpAndroidSupport = "3.13.1"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -36,6 +37,7 @@ okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhtt
 logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "loggingInterceptor" }
 okhttp-bom = { group = "com.squareup.okhttp3", name = "okhttp-bom", version.ref = "okhttpBom" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+okhttp-android-support = { group = "com.squareup.okhttp3", name = "okhttp-android-support", version.ref = "okhttpAndroidSupport" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
