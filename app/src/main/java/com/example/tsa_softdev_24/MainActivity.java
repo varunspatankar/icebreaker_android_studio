@@ -1,13 +1,11 @@
 package com.example.tsa_softdev_24;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 /*
 public class MainActivity extends AppCompatActivity {

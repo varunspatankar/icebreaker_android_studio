@@ -10,18 +10,32 @@ navigationFragment = "2.6.0"
 navigationUi = "2.6.0"
 activity = "1.8.0"
 jacksonCore = "2.17.0-rc1"
+jacksonAnnotations = "2.17.0-rc1"
+jacksonCoreVersion = "2.17.0-rc1"
+jacksonDatabind = "2.17.0-rc1"
+okhttp = "5.0.0-alpha.12"
+okhttpAndroid = "5.0.0-alpha.12"
+mockwebserver3Junit5 = "5.0.0-alpha.12"
+loggingInterceptor = "5.0.0-alpha.12"
+okhttpBom = "5.0.0-alpha.12"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
 navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigationUi" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 jackson-core = { group = "com.fasterxml.jackson.databind", name = "jackson-databind", version.ref = "jacksonCore" }
+jackson-annotations = { group = "com.fasterxml.jackson.core", name = "jackson-annotations", version.ref = "jacksonAnnotations" }
+core-jackson-core = { group = "com.fasterxml.jackson.core", name = "jackson-core", version.ref = "jacksonCoreVersion" }
+jackson-databind = { group = "com.fasterxml.jackson.core", name = "jackson-databind", version.ref = "jacksonDatabind" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "loggingInterceptor" }
+okhttp-bom = { group = "com.squareup.okhttp3", name = "okhttp-bom", version.ref = "okhttpBom" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

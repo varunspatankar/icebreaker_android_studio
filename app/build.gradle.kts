@@ -6,6 +6,7 @@ android {
     namespace = "com.example.tsa_softdev_24"
     compileSdk = 34
 
+
     defaultConfig {
         applicationId = "com.example.tsa_softdev_24"
         minSdk = 24
@@ -32,19 +33,26 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    dependenciesInfo {
+        includeInApk = true
+        includeInBundle = true
+    }
+    buildToolsVersion = "34.0.0"
 }
 
 dependencies {
-
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
     implementation(libs.activity)
-    implementation(libs.jackson.core)
+    implementation(libs.jackson.annotations)
+    implementation(libs.core.jackson.core)
+    implementation(libs.jackson.databind)
+    implementation(libs.logging.interceptor)
+    implementation(platform(libs.okhttp.bom))
+    implementation(libs.okhttp)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.15.3")
 }

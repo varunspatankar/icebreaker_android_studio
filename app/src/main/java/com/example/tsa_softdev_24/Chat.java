@@ -17,8 +17,8 @@ public class Chat {
         return chatdata.getTone();
     }
 
-    public String getChatRecipient() {
-        return chatdata.getRecipient();
+    public String getChatRecipent() {
+        return chatdata.getrecipent();
     }
 
     public String getChatSetting() {

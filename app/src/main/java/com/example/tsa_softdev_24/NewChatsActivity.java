@@ -2,40 +2,23 @@ package com.example.tsa_softdev_24;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Serializable;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URL;
-import java.util.HashMap;
 
 import java.io.IOException;
 
-import javax.net.ssl.HttpsURLConnection;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class NewChatsActivity extends AppCompatActivity {
     public CardView answer;
+    public String url = "http:/10.0.2.2:1800/";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +35,7 @@ public class NewChatsActivity extends AppCompatActivity {
 
         // Find the CardView by its ID
         answer = (CardView) findViewById(R.id.ans);
+
 
         // Set an OnClickListener for Lesson1
         answer.setOnClickListener(new View.OnClickListener() {
@@ -70,84 +54,58 @@ public class NewChatsActivity extends AppCompatActivity {
                 String current_setting = t3.getText().toString();
                 String current_question = t4.getText().toString();
 
-                HashMap<String, String> request = new HashMap<>();
-                request.put("tone", current_tone);
-                request.put("recipient", current_recipient);
-                request.put("message", current_question);
-                request.put("setting", current_setting);
 
-                String tosend;
-                ObjectMapper request2 = new ObjectMapper();
-                try {
-                    tosend = request2.writeValueAsString(request);
-                } catch (JsonProcessingException e) {
-                    throw new RuntimeException(e);
-                }
+                Runnable runnable = new Runnable() {
+                    public void run() {
+                        OkHttpClient client = new OkHttpClient();
 
-                ChatData current = new ChatData(current_tone, current_recipient, current_setting, current_question);
-                URL url = null;
-                try {
-                    url = new URL("127.0.0.1:1800");
-                } catch (MalformedURLException e) {
-                    throw new RuntimeException(e);
-                }
+                        FormBody formBody = new FormBody.Builder()
+                                .add("tone", current_tone)
+                                .add("recipent", current_recipient)
+                                .add("message", current_question)
+                                .add("setting", current_setting)
+                                .build();
 
 
 
+                        Request builder = new Request.Builder()
+                                .header("Content-Type", "application/json")
+                                .header("User-Agent", "Mozilla/5.0")
+                                .url(url)
+                                .post(formBody)
+                                .build();
 
-                HttpURLConnection conn = null;
-                try {
-                    conn = (HttpURLConnection) url.openConnection();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                try {
-                    conn.setRequestMethod("POST");
-                } catch (ProtocolException e) {
-                    throw new RuntimeException(e);
-                }
-                conn.setDoOutput(true);
-                conn.setDoInput(true);
-                conn.setRequestProperty("Content-Type", "application/json");
-                conn.setRequestProperty("User-Agent", "Mozilla/5.0");
-
-                try {
-                    DataOutputStream out = new DataOutputStream(conn.getOutputStream());
-                    out.writeBytes(tosend);
-                    out.flush();
-                    out.close();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-
-                //out.writeBytes(tosend);
-
-                /*
-                try (DataOutputStream out = new DataOutputStream(conn.getOutputStream())) {
-                    out.writeBytes(tosend);
-                    out.flush();
-                    out.close();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                 */
-
-                try (BufferedReader bf = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
-                    String line;
-                    while ((line = bf.readLine()) != null) {
-                        Log.i("debug: ", line);
+                        try {
+                            Response response = client.newCall(builder).execute();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+                };
+                Thread thread = new Thread(runnable);
+                thread.start();
+                Intent intent = new Intent(NewChatsActivity.this, Old1.class);
+                startActivity(intent);
 
 
 
-                // Start the new activity
-                //Intent intent = new Intent(NewChatsActivity.this, OldChats2Activity.class);
-                //startActivity(intent);
-            }
-        });
-
+                };
+            });
+        }
     }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
