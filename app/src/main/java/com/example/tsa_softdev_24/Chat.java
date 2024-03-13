@@ -37,4 +37,9 @@ public class Chat {
         response = s;
     }
 
+    public Chat(String r, ChatData c) {
+        response = r;
+        chatdata = c;
+    }
+
 }

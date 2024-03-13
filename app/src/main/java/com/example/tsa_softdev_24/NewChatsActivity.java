@@ -1,5 +1,6 @@
 package com.example.tsa_softdev_24;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -20,6 +21,9 @@ public class NewChatsActivity extends AppCompatActivity {
     public CardView answer;
     public String url = "http:/10.0.2.2:1800/";
     private static volatile Response response;
+
+    public static ChatData currentChatData;
+    public static Chat currentChat;
 
 
 
@@ -103,6 +107,10 @@ public class NewChatsActivity extends AppCompatActivity {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
+
+
+                Intent intent = new Intent(NewChatsActivity.this, OldChatsTemplateActivity.class);
+                startActivity(intent);
             }
 
             ;
